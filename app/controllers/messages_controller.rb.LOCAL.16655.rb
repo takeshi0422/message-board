@@ -5,6 +5,7 @@ class MessagesController < ApplicationController
     @messages = Message.all
     @message = Message.new
   end
+  
   def create
     binding.pry
     @message = Message.new(message_params)
@@ -16,7 +17,6 @@ class MessagesController < ApplicationController
       flash.now[:alert] = "メッセージの保存に失敗しました。"
       render 'index'
     end
-<<<<<<< HEAD
   end
   
   def edit
@@ -35,8 +35,6 @@ class MessagesController < ApplicationController
   def destroy
     @message.destroy
     redirect_to root_path, notice: 'メッセージを削除しました'
-=======
->>>>>>> challenge1
   end
 
   
