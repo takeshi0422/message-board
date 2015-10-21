@@ -1,8 +1,6 @@
 <!DOCTYPE html>
-
-<html　lang="ja">
+<html>
 <head>
-  <meta charset="utf-8">
   <title>MessageBoard</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
@@ -11,9 +9,13 @@
 </head>
 <body>
     <nav class="navbar">
-
-    <div class="container">
-      <%= yield %>
-    </div>
-  </body>
-</html>
+      <div class="container">
+    <% if notice %>
+      <div class="alert alert-info">
+        <%= notice %>
+      </div>
+    <% end %>
+    
+    <%= yield %>
+  </div>
+</body>
